@@ -12,30 +12,30 @@
 <div class="container mt-3">
     <h2>Stacked form</h2>
 
-    <form action="">
+    <form th:action="@{/autor/form}" method="post" th:object="${autor}">
 
         <!-- ID-->
         <div class="mb-3 mt-3">
             <label >ID:</label>
-            <input type="number" class="form-control"  placeholder="Enter ID">
+            <input type="number" class="form-control"  placeholder="Enter ID" th:field="*{id}" readonly="readonly">
         </div>
 
         <!-- Nombre -->
         <div class="mb-3 mt-3">
             <label > Nombre:</label>
-            <input type="text" class="form-control" placeholder="Enter nombre" >
+            <input type="text" class="form-control" placeholder="Enter nombre" th:field="*{nombre}">
         </div>
 
         <!-- Apellido -->
         <div class="mb-3 mt-3">
             <label>Apellido:</label>
-            <input type="text" class="form-control" placeholder="Enter apellido" >
+            <input type="text" class="form-control" placeholder="Enter apellido" th:field="*{apellido}">
         </div>
 
         <!-- Email -->
         <div class="mb-3">
             <label >Email:</label>
-            <input type="email" class="form-control"  placeholder="Enter email" >
+            <input type="email" class="form-control"  placeholder="Enter email" th:field="*{email}">
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>

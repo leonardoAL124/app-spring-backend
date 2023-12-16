@@ -29,7 +29,7 @@
             <td th:text="${autor.apellido}" ></td>
             <td th:text="${autor.email}" ></td>
             <td>
-                <a href="" class="btn btn-success">Editar</a>
+                <a th:href="@{/autor/editar/} + ${autor.id}" class="btn btn-success">Editar</a>
                 <a th:href="@{/autor/eliminar/} + ${autor.id}" class="btn btn-danger">Eliminar</a>
             </td>
         </tr>
