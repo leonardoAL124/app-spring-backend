@@ -1,23 +1,23 @@
 package com.itsqmet.Biblioteca.controladores;
 
 import com.itsqmet.Biblioteca.entidades.Autor;
-import com.itsqmet.Biblioteca.entidades.Libro;
 import com.itsqmet.Biblioteca.repositorios.AutorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
+//@RestController
 @Controller
 public class AutorControler {
 
     @Autowired
     AutorRepository autorRepository;
+
 
     // READ
     @GetMapping("/autores")
@@ -62,5 +62,52 @@ public class AutorControler {
         return "redirect:/autores";
 
     }
+
+
+
+
+
+
+    /////////////// CREACIÓN DE SERVICIOS /////////////
+/*
+     ///// GET
+    @GetMapping("/autores")
+    public List <Autor> autores(){
+      //  List <Autor> autores = autorRepository.findAll();
+        return autorRepository.findAll();
+    }
+
+
+    //// POST
+    @PostMapping("/autores")
+    public Autor crear(@RequestBody Autor autor){
+        return autorRepository.save(autor);
+    }
+
+    //////  DELETE
+    @DeleteMapping("/autores/{id}")
+    public ResponseEntity<Boolean> eliminarAutor(@PathVariable int id){
+        Optional <Autor> autor = autorRepository.findById(id);
+        autorRepository.delete(autor.get());
+        return ResponseEntity.ok(true);
+    }
+
+    /////// PUT
+    @PutMapping("/autores/{id}")
+    public  ResponseEntity <Autor> actualizarAutor(@PathVariable int id, @RequestBody Autor autorData){
+        Optional <Autor> opcionalAutor = autorRepository.findById(id);
+
+        Autor autor = opcionalAutor.get();
+        //actualizar
+        autor.setNombre( autorData.getNombre() );
+        autor.setApellido( autorData.getApellido());
+        autor.setEmail( autorData.getEmail());
+
+        Autor actorGuardado = autorRepository.save(autor);
+        return ResponseEntity.ok(actorGuardado);
+
+    }
+
+*/
 
 }
