@@ -3,9 +3,9 @@ node{
         Maven
     }
     stage('Limpiar'){
-        bat 'clean'
+        bat 'mvn clean install'
     }
     stage('Crear'){
-        bat 'package'
+        bat 'mvn clean package'
     }
 }
