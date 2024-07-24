@@ -1,11 +1,8 @@
 node{
-    tools{
-        Maven
-    }
     stage('Limpiar'){
-        bat 'mvn clean install'
+        bat 'mvn clean'
     }
     stage('Crear'){
-        bat 'mvn clean package'
+        bat 'mvn package'
     }
 }
