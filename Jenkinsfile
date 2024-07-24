@@ -1,6 +1,6 @@
 node{
     tools{
-        Maven "m3"
+        Maven
     }
     stage('Limpiar'){
         bat 'clean'
